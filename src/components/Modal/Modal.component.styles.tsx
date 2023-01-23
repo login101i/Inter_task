@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+const paddingTop = '100px';
 
-export const Wrapper = styled.div`
+export const ModalWrapper = styled.div`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -10,13 +11,12 @@ export const Wrapper = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-	padding-top: 100px;
+	padding-top: ${paddingTop};
 	width: 100vw;
-	height: calc(100vw -100px);
+	height: calc(100vw -${paddingTop});
 	color: white;
 	background: white;
 	background-color: white;
-	opacity: 0.98;
 	border-radius: 5px;
 `;
 
@@ -35,23 +35,16 @@ export const ModalContainer = styled.div<{ backgroundColor: string }>`
 	background-color: ${props => props.backgroundColor};
 	color: white;
 	border-radius: 5px;
-	// animation: showModal 1s forwards easeOut;
 
 	-webkit-box-shadow: 1px 12px 28px -5px rgba(97, 98, 116, 1);
 	-moz-box-shadow: 1px 12px 28px -5px rgba(97, 98, 116, 1);
 	box-shadow: 1px 12px 28px -5px rgba(97, 98, 116, 1);
-
-	// @keyframes showModal {
-	// 	from {
-	// 		opacity: 0;
-	// 	}
-
-	// 	to {
-	// 		opacity: 1;
-	// 	}
-	// }
 `;
 
+export const ModalValue = styled.div`
+	font-size: 18px;
+	margin: 2px 0px;
+`;
 export const CloseIcon = styled.div`
 	position: absolute;
 	top: 10px;

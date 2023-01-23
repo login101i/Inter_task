@@ -4,8 +4,8 @@ import { useProductContext } from '../../appState/productsContext';
 
 export const InputComponent: FC = () => {
 	const inputRef = useRef<HTMLInputElement>(null);
-	const { handleProducts, query } = useProductContext();
-	const inputPlaceholderText = 'Filter by id';
+	const { handleProductsById, query } = useProductContext();
+	const inputPlaceholderText = 'Filter all products by id';
 
-	return <InputContainer type='text' onChange={handleProducts} ref={inputRef} value={query} placeholder={inputPlaceholderText} />;
+	return <InputContainer type='text' onChange={handleProductsById} ref={inputRef} value={query} placeholder={inputPlaceholderText} />;
 };

@@ -3,18 +3,22 @@ import { ReactNode, Dispatch, SetStateAction, ChangeEvent } from 'react';
 export type TInitialState = {
 	products: TProduct[];
 	isLoaded: boolean;
-	error: null | string;
+	errorStatus: null | string;
+	setErrorStatus: Dispatch<SetStateAction<string | null>>;
 	query: string;
 	setQuery: Dispatch<SetStateAction<string>>;
 	handlePagination: (direction: string) => void;
 	currentPage: number;
+	setCurrentPage: Dispatch<SetStateAction<number>>;
 	apiTotalPages: number;
 	apiItInitialPageNumber: number;
 	handleModal: (product: TProduct[]) => void;
 	setIsModal: Dispatch<SetStateAction<boolean>>;
 	isModal: boolean;
 	modalProductInfo: TProduct[];
-	handleProducts: (e: ChangeEvent<HTMLInputElement>) => void;
+	handleProductsById: (e: ChangeEvent<HTMLInputElement>) => void;
+	itemsPerPage: number;
+	link: string;
 };
 
 export type TProduct = {

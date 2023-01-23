@@ -10,9 +10,9 @@ type Props = {
 	onClick?: () => void;
 };
 
-export const CustomIcon: FC<Props> = ({ size = 35, Icon, color = 'orange', onClick, style, iconText }) => {
+export const CustomIcon: FC<Props> = ({ size = 35, Icon, color = 'black', onClick, style, iconText }) => {
 	return (
-		<IconContainer onClick={onClick}>
+		<IconContainer onClick={onClick} color={color}>
 			<Icon
 				style={{
 					fontSize: `${size}px`,

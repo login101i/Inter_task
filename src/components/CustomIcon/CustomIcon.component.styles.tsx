@@ -8,15 +8,9 @@ export const IconContainer = styled.div`
 	flex-direction: column;
 	font-size: 22px;
 	margin: 0px 10px;
-	color: ${props => (props.color ? props.color : 'grey')};
 	text-align: center;
-	cursor: pointer;
+	cursor: ${props => (props.color === 'black' ? 'pointer' : '')};
 	user-select: none;
-
-	transition: 0.2s ease-in-out;
-	&:hover {
-		filter: brightness(85%);
-	}
 `;
 export const IconText = styled.div<{ color: string }>`
 	color: ${props => props.color};
