@@ -37,7 +37,7 @@ export const ProductContextProvider: FC<ProductContextProps> = ({ children }) =>
 	const [isModal, setIsModal] = useState<boolean>(false);
 	const [modalProductInfo, setModalProductInfo] = useState<TProduct[]>([]);
 	const [errorStatus, setErrorStatus] = useState<string | null>(null);
-	const [query, setQuery] = useState<string>('');
+	const [query, setQuery] = useState<number | string>('');
 	let [currentPage, setCurrentPage] = useState<number>(1);
 	const itemsPerPage: number = 5;
 	const apiItInitialPageNumber: number = 1;
@@ -70,17 +70,13 @@ export const ProductContextProvider: FC<ProductContextProps> = ({ children }) =>
 
 	const getProducts = async () => {
 		setIsLoaded(true);
-
 		try {
 			const { data } = await axiosInstanceWithMapCaseMiddleware.get<TGetProductsResponse>(link);
 			Array.isArray(data.data) ? setProducts(data.data) : setProducts([data.data]);
 			setApiTotalPages(data.totalPages);
 		} catch (err: any) {
-			console.log(err);
-
 			setErrorStatus(err.code);
 		}
-
 		setIsLoaded(false);
 	};
 

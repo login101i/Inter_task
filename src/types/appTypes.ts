@@ -5,8 +5,8 @@ export type TInitialState = {
 	isLoaded: boolean;
 	errorStatus: null | string;
 	setErrorStatus: Dispatch<SetStateAction<string | null>>;
-	query: string;
-	setQuery: Dispatch<SetStateAction<string>>;
+	query: string | number;
+	setQuery: Dispatch<SetStateAction<number | string>>;
 	handlePagination: (direction: string) => void;
 	currentPage: number;
 	setCurrentPage: Dispatch<SetStateAction<number>>;

@@ -7,5 +7,14 @@ export const InputComponent: FC = () => {
 	const { handleProductsById, query } = useProductContext();
 	const inputPlaceholderText = 'Filter all products by id';
 
-	return <InputContainer type='text' onChange={handleProductsById} ref={inputRef} value={query} placeholder={inputPlaceholderText} />;
+	return (
+		<InputContainer
+			type='text'
+			onChange={handleProductsById}
+			ref={inputRef}
+			value={query}
+			placeholder={inputPlaceholderText}
+			data-testid='test-input'
+		/>
+	);
 };

@@ -15,7 +15,6 @@ export const ModalWrapper = styled.div`
 	width: 100vw;
 	height: calc(100vw -${paddingTop});
 	color: white;
-	background: white;
 	background-color: white;
 	border-radius: 5px;
 `;

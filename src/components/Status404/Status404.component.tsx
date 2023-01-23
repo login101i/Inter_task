@@ -1,5 +1,5 @@
-import { FC, useState, ReactNode } from 'react';
-import { AppContainer } from '../../App.styles';
+import { FC } from 'react';
+import { ErrorContainer } from './Status404.component.styles';
 import { ErrorMessage } from '../Table/Table.component.styles';
 import { CustomIcon } from '../CustomIcon/CustomIcon.component';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
@@ -14,8 +14,8 @@ export const Status404Component: FC = () => {
 	}
 
 	return (
-		<AppContainer>
-			<ErrorMessage>Product with id {query} do not exist </ErrorMessage>
+		<ErrorContainer data-testid='test-404Status'>
+			<ErrorMessage data-testid='test-errorMessage'>Product with id {query} do not exist </ErrorMessage>
 			<CustomIcon
 				Icon={ArrowRightAltIcon}
 				onClick={handleGoBack}
@@ -23,6 +23,6 @@ export const Status404Component: FC = () => {
 				style={{ transform: 'rotate(180deg)' }}
 				color={'black'}
 			/>
-		</AppContainer>
+		</ErrorContainer>
 	);
 };

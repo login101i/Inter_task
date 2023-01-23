@@ -9,8 +9,8 @@ export const Pagination: FC = () => {
 	let { currentPage, handlePagination, apiTotalPages, apiItInitialPageNumber, query } = useProductContext();
 	const directionLeft = 'left';
 	const directionRight = 'right';
-
 	const navigate = useNavigate();
+
 	return (
 		<>
 			{!query && (

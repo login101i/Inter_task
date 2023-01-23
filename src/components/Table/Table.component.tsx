@@ -23,7 +23,7 @@ export const TableComponent: FC = () => {
 					<TableHeading>Year</TableHeading>
 				</TableRow>
 				{products.map(product => (
-					<TableRow key={product.id} backgroundColor={product.color} onClick={() => handleModal([product])}>
+					<TableRow key={product.id} backgroundColor={product.color} onClick={() => handleModal([product])} data-testid='test-tableRow'>
 						<TableCell>{product.id}</TableCell>
 						<TableCell>{product.name}</TableCell>
 						<TableCell>{product.year}</TableCell>

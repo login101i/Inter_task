@@ -5,7 +5,7 @@ import { AppContainer } from './App.styles';
 import { useProductContext } from './appState/productsContext';
 
 const App: FC = () => {
-	const { errorStatus } = useProductContext();
+	const { errorStatus, isModal } = useProductContext();
 
 	if (errorStatus === 'ERR_BAD_REQUEST') return <Status404Component />;
 	if (errorStatus === 'ERR_NETWORK') return <Status504Component />;
@@ -18,7 +18,7 @@ const App: FC = () => {
 					path='/products/page/:currentPage'
 					element={
 						<>
-							<AppContainer>
+							<AppContainer data-testid='test-appContainer' isModal={isModal}>
 								<InputComponent />
 								<TableComponent />
 								<Pagination />
