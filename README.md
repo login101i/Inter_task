@@ -1,6 +1,6 @@
 Simple app which fetches data from https://reqres.in/api/products api. You can filter item by id and see information regarding specific table record on modal pop up.
 
-Site visible on public domain intertable.netlify.app
+Site visible on public domain www.intertable.netlify.app
 
 Getting Started with Create React App
 
